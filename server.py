@@ -71,7 +71,7 @@ def handle_client(client):
             if text.upper() == "QUIT": #if client types quit
                 break
 
-            broadcast(f"{username}: {text}", exclude_client=client)
+            broadcast(f"{username}: {text}", exclude_client=client) 
 
     except:
         pass

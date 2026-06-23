@@ -23,7 +23,7 @@ def receive_messages():
                 
 
             #rejected username
-            elif message == "USERNAME_TAKEN":
+            elif message == "USERNAME_TAKEN": 
                 print("Username already exists. Try another one.")
             
             #display normal message
@@ -49,10 +49,13 @@ def send_messages():
             break
 
 #threads to send and receive
-receive_thread = threading.Thread(target=receive_messages, daemon=True)
-receive_thread.start()
 
-send_thread = threading.Thread(target=send_messages, daemon=True)
+receive_thread = threading.Thread(target=receive_messages, daemon = True)
+send_thread = threading.Thread(target=send_messages, daemon = True)
+
+receive_thread.start()
 send_thread.start()
 
-send_thread.join() #keep program running 
+receive_thread.join()
+send_thread.join()
+
