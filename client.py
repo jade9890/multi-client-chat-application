@@ -20,6 +20,7 @@ def receive_messages():
             if message == "USERNAME":
                 username = input("Enter username: ").strip()
                 client.send(username.encode())
+                
 
             #rejected username
             elif message == "USERNAME_TAKEN":
@@ -37,6 +38,7 @@ def receive_messages():
 #function for sending messages to the server
 def send_messages():
     while True: #run forever
+
         try:
             message = input()
             client.send(message.encode()) #send the message to server

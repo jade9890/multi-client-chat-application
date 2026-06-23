@@ -41,7 +41,7 @@ def remove_client(client):
         except:
             pass
 
-
+#get client username
 def get_username(client):
     while True:
         client.send("USERNAME".encode())
